@@ -1,0 +1,54 @@
+name: Bug Report
+description: File a bug report
+labels: ["bug"]
+
+body:
+  - type: textarea
+    attributes:
+      label: Mod Version
+      description: The version of Riim you are currently using.
+      placeholder: e.g. v0.1.0 or d34db3ef (use commit hash if compiled manually)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Game Version
+      description: The version of Mindustry you are currently using. If you are using a custom client, it would be helpful if you check whether the bug happens in the vanilla client as well.
+      placeholder: e.g. v135 or BE 20069 (custom client name, if you are using one)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: OS
+      description: Your operating system.
+      placeholder: e.g. Debian 11, TempleOS 5.03, or Windows XP
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: A description of what should have happened.
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Oil floats in water.
+        2. Cover yourself in oil.
+        3. Wait for it to rain.
+        4. Write the actual steps to reproduce the behavior.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Logs
+      description: The debug log and crash logs. Get it from Settings > Game Data > Export Crash Logs.
+      placeholder: If you know for sure that the logs are unnecessary, just put "Not needed" or something.
+    validations:
+      required: true
