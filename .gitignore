@@ -1,0 +1,9 @@
+# Symlinks
+s
+r
+
+# Maven
+target/
+
+# JVM crash logs
+hs_err_pid*

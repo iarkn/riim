@@ -1,0 +1,10 @@
+{
+    "name": "riim",
+    "displayName": "Riim",
+    "author": "iarkn",
+    "description": "TBA",
+    "version": "0.1.0",
+    "minGameVersion": "135",
+    "main": "iarkn.riim.Riim",
+    "java": true
+}
