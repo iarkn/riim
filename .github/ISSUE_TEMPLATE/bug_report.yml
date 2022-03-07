@@ -48,7 +48,6 @@ body:
   - type: textarea
     attributes:
       label: Logs
-      description: The debug log and crash logs. Get it from Settings > Game Data > Export Crash Logs.
-      placeholder: If you know for sure that the logs are unnecessary, just put "Not needed" or something.
+      description: The debug log and crash logs. Get it from Settings > Game Data > Export Crash Logs. If you know for sure that the logs are unnecessary, just fill this with "Not needed" or something.
     validations:
       required: true
