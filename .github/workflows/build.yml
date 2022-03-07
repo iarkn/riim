@@ -1,0 +1,16 @@
+name: Build Changes
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build the mod
+        run: mvn package
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: riim
+          path: target/riim-*.jar
