@@ -44,8 +44,6 @@ done
 [ -d "$OUT_FILE" ] && OUT_FILE="$OUT_FILE/${FILE%.*}-android.jar"
 [ -z "$OUT_FILE" ] && OUT_FILE="${FILE%.*}-android.jar"
 
-OUT_DIR="$(dirname $OUT_FILE)"
-
 [ -z "$GAME_VER" ]  && err_die "game version is not specifed, use the '-game <version>' option"
 [ -z "$API_LEVEL" ] && err_die "api level is not specified, use the '-api <level>' option"
 
@@ -67,7 +65,7 @@ cp "$FILE" "$OUT_FILE"
 
 d8 "$FILE" \
     --lib "$ANDROID_JAR" --classpath "$ARC_JAR" --classpath "$MIND_JAR" \
-    --min-api 14 --output "$OUT_DIR"
+    --min-api 14
 
-zip -qg "$OUT_FILE" "$OUT_DIR/classes.dex"
-rm -f "$OUT_DIR/classes.dex"
+zip -qg "$OUT_FILE" "classes.dex"
+rm -f "classes.dex"

@@ -16,8 +16,8 @@ jobs:
       - name: Build the mod for Android
         if: runner.os == 'Linux'
         run: |
-          echo "$ANDROID_HOME/build-tools/32.0.0" >> $GITHUB_PATH
-          ./scripts/package_android.sh -api 32 -game v135.2
+          export PATH=$ANDROID_HOME/build-tools/32.0.0:$PATH
+          ./scripts/package_android.sh -api 32 -game v135.2 target/riim-*.jar
 
       - uses: actions/upload-artifact@v2
         if: runner.os == 'Linux'
