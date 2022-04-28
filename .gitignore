@@ -7,3 +7,4 @@ target/
 
 # JVM crash logs
 hs_err_pid*
+/bin/

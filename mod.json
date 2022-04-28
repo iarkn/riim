@@ -5,6 +5,6 @@
     "description": "TBA",
     "version": "0.1.0",
     "minGameVersion": "135",
-    "main": "iarkn.riim.Riim",
+    "main": "riim.Riim",
     "java": true
 }

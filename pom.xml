@@ -10,13 +10,14 @@
     <version>0.1.0</version>
 
     <name>riim</name>
+    <description>A mod for the Mindustry game</description>
     <url>https://github.com/iarkn/riim</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
-        <kotlin.version>1.6.10</kotlin.version>
-        <gameVersion>v135</gameVersion>
+        <kotlin.version>1.6.21</kotlin.version>
+        <gameVersion>v135.2</gameVersion>
     </properties>
 
     <repositories>
@@ -54,6 +55,7 @@
                 <directory>${project.basedir}</directory>
                 <includes>
                     <include>mod.json</include>
+                    <include>icon.png</include>
                 </includes>
             </resource>
         </resources>
@@ -61,7 +63,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.3.0</version>
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
                     <minimizeJar>true</minimizeJar>
@@ -70,20 +72,6 @@
                             <include>org.jetbrains.kotlin:kotlin-stdlib</include>
                         </includes>
                     </artifactSet>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>META-INF/license/**</exclude>
-                                <exclude>META-INF/*</exclude>
-                                <exclude>META-INF/maven/**</exclude>
-                                <exclude>LICENSE</exclude>
-                                <exclude>NOTICE</exclude>
-                                <exclude>/*.txt</exclude>
-                                <exclude>build.properties</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
                 </configuration>
                 <executions>
                     <execution>
@@ -98,14 +86,8 @@
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
-                <configuration>
-                    <sourceDirs>
-                        <source>${project.basedir}/src/main/kotlin</source>
-                    </sourceDirs>
-                </configuration>
                 <executions>
                     <execution>
-                        <id>compile</id>
                         <phase>process-sources</phase>
                         <goals>
                             <goal>compile</goal>
