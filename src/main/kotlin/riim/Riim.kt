@@ -13,9 +13,11 @@ class Riim : Mod() {
             UI.load()
         }
 
-        Events.run(Trigger.update) {
-            if (Vars.state.isGame() && Core.input.keyTap(KeyCode.f10)) {
-                UI.modDialog.show()
+        if (!Vars.mobile) {
+            Events.run(Trigger.update) {
+                if (Vars.state.isGame() && Core.input.keyTap(KeyCode.f10)) {
+                    UI.modDialog.show()
+                }
             }
         }
     }

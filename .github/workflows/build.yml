@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build the mod
-        run: mvn package
+        run: mvn -B clean package
 
       - name: Build the mod for Android
         if: runner.os == 'Linux'
