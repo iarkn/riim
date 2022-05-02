@@ -55,28 +55,19 @@ the Android SDK platform and build tools (replace the version with the latest):
     $ cd $ANDROID_SDK_ROOT/cmdline-tools/latest/bin
     $ ./sdkmanager "build-tools;32.0.0" "platforms;android-32"
 
-Add `$ANDROID_SDK_ROOT/build-tools/32.0.0` to your PATH. To build, make sure
-you have ran `mvn package` first. Change directory to where the project is
-and run
+Add `$ANDROID_SDK_ROOT/build-tools/32.0.0` to your PATH. On Windows, replace
+`$ANDROID_SDK_ROOT` with `%ANDROID_SDK_ROOT%`. Change directory to where the
+project is and do the following:
 
-    $ ./scripts/package_android.sh -api 32 -game <game_version>
+    $ cd tools
+    $ mvn install
+    $ cd ..
+    $ mvn package riim-tools:dex
 
 Build output should be in `target/` in the form of `riim-<version>-android.jar`.
-This script will not work on Windows[^2], so you have to do it manually:
-
-    $ d8 target\riim-<version>.jar ^
-        --lib %ANDROID_SDK_ROOT%\platforms\android-32\android.jar ^
-        --classpath %HOME%\.m2\repository\com\github\anuken\arc\arc-core\<game_version>\arc-core-<game_version>.jar ^
-        --classpath %HOME%\.m2\repository\com\github\anuken\mindustry\core\<game_version>\core-<game_version>.jar ^
-        --min-api 14
-
-This will output `classes.dex` in your current directory. Put it inside the
-main JAR file (or inside a copied JAR file) and that's it.
 
 [^1]: Required for Android builds. You only need the command-line tools to
       build this mod.
-[^2]: If you know batch scripting on Windows, feel free to port the script and
-      submit a patch!
 
 ## License
 

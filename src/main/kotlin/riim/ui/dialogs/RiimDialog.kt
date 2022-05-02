@@ -32,7 +32,7 @@ class RiimDialog(title: String) : BaseDialog(title) {
     init {
         cont.add("Interjection").color(Pal.accent).row()
 
-        cont.pane() {
+        cont.pane {
             it.add(interjection).color(Color.lightGray)
         }
 
