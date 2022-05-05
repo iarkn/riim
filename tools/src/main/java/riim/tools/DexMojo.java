@@ -56,9 +56,10 @@ public class DexMojo extends AbstractMojo {
             var out = Path.of(buildDir, build.getFinalName() + "-android.jar");
             Files.copy(buildFile.toPath(), out, StandardCopyOption.REPLACE_EXISTING);
 
-            exec("d8 --min-api 14 --lib " + androidJar.getPath() + " " + classpath +
-                 " --output " + buildDir + " " + buildFile.getPath());
-            exec("jar -uf " + out.toString() + " " + buildDir + "/classes.dex");
+            exec("d8 --min-api 14 --lib " + androidJar.getPath() + " " +
+                 classpath + " " + buildFile.getPath());
+            exec("jar -uf " + out.toString() + " classes.dex");
+            Files.deleteIfExists(Path.of("classes.dex"));
         } catch (Exception e) {
             throw new MojoExecutionException(e);
         }
