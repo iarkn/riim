@@ -39,10 +39,9 @@ body:
       label: Steps to reproduce
       description: Steps to reproduce the behavior.
       placeholder: |
-        1. Oil floats in water.
-        2. Cover yourself in oil.
-        3. Wait for it to rain.
-        4. Write the actual steps to reproduce the behavior.
+        1. Write this.
+        2. And then write that.
+        3. Lastly, rewrite it in Rust.
     validations:
       required: true
   - type: textarea

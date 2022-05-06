@@ -1,7 +1,9 @@
 package riim.ui.dialogs
 
 import arc.graphics.*
+import arc.scene.ui.*
 import arc.scene.ui.layout.*
+import arc.util.*
 
 import mindustry.graphics.*
 import mindustry.ui.dialogs.*
@@ -30,12 +32,21 @@ class RiimDialog(title: String) : BaseDialog(title) {
         """.trimIndent()
 
     init {
-        cont.add("Interjection").color(Pal.accent).row()
+        val interDialog = Dialog("").apply {
+            setFillParent(true)
 
-        cont.pane {
-            it.add(interjection).color(Color.lightGray)
+            cont.add("Interjection").color(Pal.accent).row()
+            cont.pane {
+                it.add(interjection).color(Color.lightGray)
+            }.row()
+
+            cont.button("I don't care") { hide() }.size(180f, 64f)
         }
 
         addCloseButton()
+
+        shown {
+            Time.runTask(2f) { interDialog.show() }
+        }
     }
 }

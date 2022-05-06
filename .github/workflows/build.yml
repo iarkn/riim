@@ -24,9 +24,8 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           export PATH=$ANDROID_HOME/build-tools/32.0.0:$PATH
-          cd tools && mvn install
-          cd ..
-          mvn riim-tools:dex
+          cd tools && mvn -B install
+          cd .. && mvn -B riim-tools:dex
 
       - uses: actions/upload-artifact@v2
         if: runner.os == 'Linux'

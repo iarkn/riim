@@ -16,7 +16,7 @@ pre-built packages from [here](https://github.com/iarkn/riim/releases).
 
 - [Git](https://git-scm.org/downloads)
 - [Maven](https://maven.apache.org/download.cgi)
-- [JDK](https://adoptium.net/temurin/releases) (>= 8)
+- [JDK](https://adoptium.net/temurin/releases) (>= 17)
 - [Android SDK](https://developer.android.com/studio#command-tools)[^1]
 
 ### Desktop
