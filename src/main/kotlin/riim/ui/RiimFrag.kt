@@ -10,7 +10,6 @@ import riim.*
 
 class RiimFrag : Fragment() {
     override fun build(parent: Group) {
-        // Main button at middle-left
         parent.fill { t ->
             t.name = "riim-trigger"
             t.left()

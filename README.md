@@ -10,6 +10,10 @@ Menu > Mods > Mod Browser then search for `iarkn/riim`.
 If you don't want to use the mod browser for some reason, you can get the
 pre-built packages from [here](https://github.com/iarkn/riim/releases).
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Building
 
 ### Prerequisites
