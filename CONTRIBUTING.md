@@ -6,7 +6,7 @@ Pull requests containing only code formatting or (re)sprites are not accepted.
 
 Submit bug reports [here](https://github.com/iarkn/riim/issues/new/choose). Keep
 in mind that the issue tracker is only used for reporting bugs. If you have any
-questions or suggestions, send threats to me on Matrix (@iarkn:envs.net).
+questions or suggestions, send threats to me on Matrix (@ia:envs.net).
 
 ## Code
 
@@ -22,8 +22,8 @@ enum class Planet(legs: Int) {
     FISH(1),
 }
 
-const val HORSE_LEGS = 5 // compile-time constant
-val immutableValue = someFunction() // not compile-time constant
+const val HORSE_LEGS = 5 // Compile-time constant
+val immutableValue = someFunction() // Not compile-time constant
 ```
 
 ### Keep the text width close to 80 columns, at most 90

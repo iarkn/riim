@@ -18,21 +18,18 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Prerequisites
 
-- [Git](https://git-scm.org/downloads)
 - [Maven](https://maven.apache.org/download.cgi)
 - [JDK](https://adoptium.net/temurin/releases) (>= 17)
 - [Android SDK](https://developer.android.com/studio#command-tools)[^1]
 
 ### Desktop
 
-The process should be the same no matter what operating system you are using:
+Run the following:
 
-    $ git clone https://github.com/iarkn/riim.git
-    $ cd riim
     $ mvn package
 
-If nothing goes wrong, the build output should be in `target/` in the form of
-`riim-<version>.jar`. Copy the JAR file to Mindustry's mods directory:
+The build output should be in `target/riim-<version>.jar`. Copy the JAR file to
+Mindustry's mods directory:
 
 - Linux: `~/.local/share/Mindustry/mods`
 - Windows: `%AppData%\Roaming\Mindustry\mods`
@@ -68,7 +65,7 @@ project is and do the following:
     $ cd ..
     $ mvn package riim-tools:dex
 
-Build output should be in `target/` in the form of `riim-<version>-android.jar`.
+Build output should be in `target/riim-<version>-android.jar`.
 
 [^1]: Required for Android builds. You only need the command-line tools to
       build this mod.
