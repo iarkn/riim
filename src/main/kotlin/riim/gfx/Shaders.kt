@@ -5,8 +5,6 @@ import arc.graphics.gl.*
 import arc.scene.ui.layout.*
 import arc.util.*
 
-import kotlin.math.sin
-
 import mindustry.*
 
 object Shaders {
@@ -16,20 +14,15 @@ object Shaders {
         univ = UnivShader("univ")
     }
 
+    fun dispose() {
+        univ.dispose()
+    }
+
     class UnivShader(name: String) : Shader(
         getFi("$name.vert"), getFi("$name.frag"),
     ) {
-        // var radius = 0f
-
         override fun apply() {
-            // setUniformf("u_time", Time.time)
-            val time = Time.time * 0.001f
-            setUniformf(
-                "u_color",
-                (sin(time) + 1f) / 2f,
-                (sin(time * 4f) + 1f) / 2f,
-                (sin(time * 8f) + 1f) / 2f,
-            )
+            setUniformf("u_time", Time.time / Scl.scl())
         }
     }
 

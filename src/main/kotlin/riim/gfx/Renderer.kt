@@ -1,6 +1,7 @@
 package riim.gfx
 
 import arc.*
+import arc.graphics.*
 import arc.graphics.g2d.*
 import arc.graphics.gl.*
 
@@ -10,16 +11,20 @@ import mindustry.graphics.*
 import riim.gfx.*
 
 object Renderer {
+    val fbo = FrameBuffer()
+
     fun load() {
+        Events.run(Trigger.preDraw) {
+            fbo.resize(Core.graphics.getWidth(), Core.graphics.getHeight())
+        }
+
         Events.run(Trigger.draw) { draw() }
     }
 
     fun draw() {
-        // TODO: Will this die if other mods use the same layer?
-        Draw.drawRange(
-            Layer.floor + 1f,
-            { Draw.shader(Shaders.univ) },
-            { Draw.shader() },
-        )
+        Draw.drawRange(Layer.floor + 1f, { fbo.begin(Color.clear) }, {
+            fbo.end()
+            fbo.blit(Shaders.univ)
+        })
     }
 }

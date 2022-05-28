@@ -31,6 +31,10 @@ class Riim : Mod() {
                     }
                 }
             }
+
+            Events.on(DisposeEvent::class.java) {
+                Shaders.dispose()
+            }
         }
 
         Vars.enableConsole = true
